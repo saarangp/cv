@@ -44,6 +44,11 @@ jobs:
           path: github_artifacts
       - name: move
         run: mkdir -p github_deploy && mv github_artifacts/*/* github_deploy
+      - name: Copy site root files
+        run: |
+          # Copy index.html and CNAME from the checked-out repo into the publish dir if they exist
+          cp index.html github_deploy/ || true
+          cp CNAME github_deploy/ || true
       - name: deploy on orphan branch
         uses: peaceiris/actions-gh-pages@v4
         with:

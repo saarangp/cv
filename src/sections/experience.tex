@@ -1,0 +1,59 @@
+% job listing environments
+
+\newenvironment{jobshort}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & #4 \\[-1pt]
+    \textit{#2, #3} & \\[3pt]
+  \end{tabularx}
+}{}
+
+% joblong: Title, Institution, Location, Date
+\newenvironment{joblong}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & #4 \\[-1pt]
+    \textit{#2, #3} & \\[3pt]
+  \end{tabularx}
+  \begin{itemize}[leftmargin=1em, label=--,
+                  topsep=2pt, partopsep=0pt, parsep=0pt, itemsep=3pt]
+}{%
+  \end{itemize}
+}
+
+
+\section*{Experience}
+
+\begin{joblong}{Research Scientist Intern}{Meta FAIR}{London}{Mar 2025 - August 2025}
+\item long long line of blah blah that will wrap when the table fills the column width
+\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+\end{joblong}
+
+
+\begin{joblong}{Medical Informatics PhD Candidate}{Biomedical AI Research}{Los Angeles}{September 2021 -- Present}
+    \item Developing a foundation model for EEG using deep state-space models and graph neural networks with over 10,000 hours of EEG data.
+    \item Using a novel clinical dataset to better understand neural connectivity in pediatric epilepsy.
+    \item Developing deep learning methods to explore neural correlates of gait in Parkinson’s Disease.
+    \item Building a BCI pipeline for deep learning-based motor imagery applications using PyTorch, BCI2000, and MNE.
+\end{joblong}
+
+\begin{joblong}{Data Science Intern}{Dascena}{Remote}{March 2020 -- May 2022}
+    \item Evaluated deep learning models to predict C. Diff infection in the ICU, resulting in a journal publication.
+    \item Built predictive models using longitudinal EMR data for multiple clinical indications.
+    \item Developed EHR data processing pipelines using AWS and PySQL to enable analysis at scale.
+\end{joblong}
+
+\begin{joblong}{Technical Operations Intern}{Vertex Pharmaceuticals}{Boston}{June 2019 -- August 2019}
+    \item Developed a data acquisition and analysis pipeline for continuous drug production data.
+    \item Built algorithms and a GUI for ETL and trend analysis on thousands of production reports.
+    \item Increased analysis speed by 500x using Tabula, Pandas, PyQt, SQL, and SEEQ.
+\end{joblong}
+
+\begin{joblong}{Undergraduate Researcher}{Maharbiz Lab}{Berkeley}{January 2018 -- May 2020}
+    \item Designed novel automations and experiments to evaluate neural implant biocompatibility in silico.
+    \item Assembled automated accelerated aging experiments using Raspberry Pi, PySerial, and MATLAB, resulting in a conference publication.
+\end{joblong}
+
+\begin{joblong}{Vice President of Projects}{Neurotech@Berkeley}{Berkeley}{January 2018 -- May 2021}
+    \item Developed a seamless EEG analysis and modeling platform for commercially available EEG devices.
+    \item Created a data science-based curriculum to make neurotechnology accessible to the public.
+    \item Built collaborations with neurotechnology research groups, leading to a student-led neurotech course at UC Berkeley.
+\end{joblong}

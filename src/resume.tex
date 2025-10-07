@@ -1,0 +1,75 @@
+% ...existing code...
+\documentclass[a4paper,10pt]{resume}
+
+% General packages
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+% Typography and spacing tweaks
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.2em}
+\setlength{\emergencystretch}{2em} % reduce overfull boxes on long lines
+\setlist[itemize]{leftmargin=*,topsep=0.2em,partopsep=0pt,parsep=0pt,itemsep=0.2em}
+
+% Bibliography: compact author-year style
+\usepackage[
+  backend=biber,
+  style=ieee,          % IEEE numeric style
+  sorting=ydnt,        % year desc (optional)
+  giveninits=true,     % initials
+  maxnames=5, minnames=5,   % -> "et al." if >3
+  doi=false, isbn=false, url=false, eprint=false
+]{biblatex}
+\addbibresource{papers.bib}
+
+
+\setlength\bibitemsep{1em}
+% Use standard biblatex author formatting (no custom macro)
+
+% % Make bibliography compact and unnumbered
+% \setlength{\biblabelsep}{0pt}
+% \setlength{\bibitemsep}{0.2em}
+% \defbibenvironment{bibliography}
+% 	{\list{\relax}{\setlength{\labelwidth}{0pt}\setlength{\labelsep}{0pt}\setlength{\leftmargin}{0pt}\setlength{\itemindent}{0pt}\setlength{\itemsep}{0.2em}\setlength{\parsep}{0pt}}\small}
+% 	{\endlist}
+% 	{\item}
+
+% Trim non-essential fields for brevity
+\AtEveryBibitem{%
+	\clearlist{language}%
+	\clearlist{address}%
+	\clearfield{month}%
+	\clearfield{urldate}%
+	\clearfield{issn}%
+	\clearfield{isbn}%
+	\clearfield{eprintclass}%
+	\clearfield{eprinttype}%
+}
+
+% Remove the "In:" before conference/journal when appropriate for a cleaner CV look
+\renewbibmacro{in:}{}
+
+\begin{document}
+
+% Simple header block inspired by sample
+\begin{tabularx}{\linewidth}{@{} C @{}}
+{\Huge Saarang Panchavati} \\ [7.5pt]
+\href{https://github.com/saarangp}{\raisebox{-0.05\height}\faGithub\ \,saarangp} \ $|$ 
+\href{https://linkedin.com/in/saarangp}{\raisebox{-0.05\height}\faLinkedin\ \,saarangp} \ $|$ 
+\href{https://saarangp.github.io}{\raisebox{-0.05\height}\faGlobe\ \,saarangp.github.io} \ $|$ 
+\href{mailto:saarang@g.ucla.edu}{\raisebox{-0.05\height}\faEnvelope\ \,saarang@g.ucla.edu} \\
+\end{tabularx}
+
+% Summary section (to be filled in)
+
+\section*{Summary}
+\input{sections/summary.tex}
+
+\input{sections/education.tex}
+\input{sections/experience.tex}
+\input{sections/publications.tex}
+\input{sections/skills.tex}
+
+\end{document}

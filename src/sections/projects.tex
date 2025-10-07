@@ -1,0 +1,34 @@
+\newenvironment{projectlong}[2]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & #2 \\[3pt]
+  \end{tabularx}
+  \begin{minipage}[t]{0.85\linewidth} % adjust width (e.g., 0.85–0.9)
+  \begin{itemize}[leftmargin=1em, label=--, topsep=2pt, itemsep=3pt]
+}{%
+  \end{itemize}
+  \end{minipage}
+  \vspace{0.6em} % <-- add or adjust this (e.g., 0.5em–1em)
+}
+
+
+
+\section*{Projects}
+
+\begin{projectlong}{A Foundation Model for EEG}{2024--Present}
+    \item Developing a novel large-scale hybrid foundation model for EEG that unifies temporal, spatial, and spectral representations of neural activity.
+    \item Designed to generalize across datasets, channel configurations, and temporal resolutions.
+    \item Builds upon prior work with transformer and state-space architectures to model long-range neural dependencies.
+\end{projectlong}
+
+
+\begin{projectlong}{Uncovering the Role of the Thalamus in Epilepsy}{2023--Present}
+    \item Investigating thalamocortical network dynamics in pediatric epilepsy through SEEG and functional connectivity analysis.
+    \item Developing deep learning models to inform closed-loop stimulation strategies for seizure prevention.
+\end{projectlong}
+
+
+\begin{projectlong}{Identifying the Neural Correlates of Gait}{2024--Present}
+    \item Analyzing joint EEG and gait data to uncover neural mechanisms underlying locomotion.
+    \item Investigating factors that determine patient response to non-invasive gait interventions.
+    \item Developing contrastive learning methods to align noisy EEG and gait representations.
+\end{projectlong}

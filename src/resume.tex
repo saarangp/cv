@@ -16,14 +16,19 @@
 % Bibliography: compact author-year style
 \usepackage[
   backend=biber,
-  style=ieee,          % IEEE numeric style
+  style=nature,          % IEEE numeric style
   sorting=ydnt,        % year desc (optional)
   giveninits=true,     % initials
   maxnames=5, minnames=5,   % -> "et al." if >3
-  doi=false, isbn=false, url=false, eprint=false
+  doi=false, isbn=false, url=false, eprint=false,
 ]{biblatex}
 \addbibresource{papers.bib}
 
+% Remove numbering from bibliography entries (for a clean CV look)
+\defbibenvironment{bibliography}
+  {\list{}{\leftmargin=0pt\itemindent=0pt\itemsep=0.4em\parsep=0pt}}
+  {\endlist}
+  {\item}
 
 \setlength\bibitemsep{1em}
 % Use standard biblatex author formatting (no custom macro)

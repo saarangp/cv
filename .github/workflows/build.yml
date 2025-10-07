@@ -2,6 +2,14 @@
 
 name: build
 on: [push]
+
+# Grant the workflow permission to write repository contents so the
+# built artifact can be pushed by the GITHUB_TOKEN (github-actions[bot]).
+# If your repository uses a protected branch policy that prevents
+# workflow pushes, you'll need to relax that or use a PAT stored in
+# secrets and pass it to the deploy action instead.
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
